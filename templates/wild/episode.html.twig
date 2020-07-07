@@ -1,0 +1,23 @@
+{# templates/wild/episode.html.twig #}
+{% extends 'base.html.twig' %}
+{% block title %}Saison {{ season.number }} {{ program.title }}{% endblock %}
+
+{% block body %}
+    <h1> {{ program.title }} (série télévisée)</h1>
+    <div>
+        <h2>Saison {{ season.number }} de {{ program.title }}</h2>
+        {{ season.description | raw }}
+    </div>
+    <div class="episode-box title-box">
+        <h3>Informations sur l'épisode</h3>
+        <ul>
+            <li>
+                <span>Épisode {{  episode.number }} (id {{  episode.id }}) : {{  episode.title }}</span>
+            </li>
+            <li>
+                <span>{{  episode.synopsis }}</span>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
